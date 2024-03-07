@@ -24,6 +24,8 @@ const Formulario = () => {
   };
 
   return (
+    <>
+      <h1 className='text-orange-500 text-5xl font-bold text-center mt-16 mb-10'>Mantenha Constancia no Seu <br /> Crescimento Conosco</h1>
       <form onSubmit={handleSubmit} className="max-w-md gap-4 flex flex-col items-center m-auto mt-8">
       <div className="mb-4">
         <input type="text" id="companyName" name="companyName" value={formData.companyName} onChange={handleChange} className="form-input mt-1 block w-full rounded border-gray-400 p-3 text-lg" required placeholder='Nome da Empresa' />
@@ -40,8 +42,9 @@ const Formulario = () => {
       <div className="mb-4">
         <input type="number" id="monthlyRevenue" name="monthlyRevenue" value={formData.monthlyRevenue} onChange={handleChange} className="form-input mt-1 block w-full rounded border-gray-400 p-3 text-lg" required placeholder='Faturamento Mensal' />
       </div>
-      <button type="submit" className="bg-orange-500 hover:bg-gray-700 duration-300 my-auto text-white font-bold py-2 px-4 rounded w-36">Enviar</button>
+      <button type="submit" className="bg-orange-500 hover:bg-gray-700 duration-300 my-auto text-white font-bold py-2 px-4 rounded w-36 mb-10">Enviar</button>
     </form>
+    </>
   );
 };
 
