@@ -4,7 +4,7 @@ export function HeroSection() {
     return (
         <>
             <div className="lg:w-80 lg:h-80 md:w-60 md:h-60 bg-orange-400 rounded-[100%] absolute blur-3xl lg:left-[-6%] lg:top-[10%] md:left-[-20%] md:top-[10%]"></div>
-            <div className="lg:w-80 lg:h-80 md:w-60 md:h-60 bg-purple-800 rounded-[100%] absolute blur-3xl left-[90%] top-[10%] md:left-[90%] md:top-[10%]"></div>
+            <div className="lg:w-80 lg:h-80 md:w-60 md:h-60 bg-purple-800 rounded-[100%] absolute blur-3xl lg:left-[90%] lg:top-[10%] md:left-[90%] md:top-[10%]"></div>
                 <div className="max-h-96 max-w-[1920px] flex justify-center items-center m-20">
                     <div className="text-center">
                         <h1 className="text-orange-400 font-bold xl:text-8xl lg:text-7xl md:text-6xl sm:text-5xl mb-4">
