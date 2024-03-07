@@ -23,7 +23,7 @@ const ProgressBar = () => {
   }, []);
 
   return (
-    <div className={`fixed top-0 left-0 w-full h-1 bg-white ${isVisible ? 'visible' : 'invisible'}`}>
+    <div className={`fixed top-0 left-0 w-full h-1 z-20 bg-white ${isVisible ? 'visible' : 'invisible'}`}>
       <div className="h-full bg-orange-500" style={{ width: `${scrollProgress}%` }} />
     </div>
   );
