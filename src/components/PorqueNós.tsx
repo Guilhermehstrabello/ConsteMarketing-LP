@@ -3,13 +3,13 @@ export function PorqueNos() {
         <>
             <div className="flex mx-128 flex-row justify-between mt-[550px] mb-24">
                 <div className="w-1/2 ml-32">
-                    <h1 className="text-3xl mb-6 text-purple-800 font-bold">Porque escolher a gente?</h1>
-                    <h2 className="text-2xl mb-9 text-orange-500 font-bold">Venha Realizar Seus Objetivos Conosco</h2>
-                    <p className="text-base mb-14">Na Conste Marketing entendemos seus <span className="text-orange-500"> desejos e aspirações</span>. Com nossas soluções <br /> de marketing especializadas, podemos tornar seus sonhos uma realidade. Dê o <br /> próximo passo em direção ao sucesso escolhendo-nos como seu parceiro confiável.</p>
+                    <h1 className="text-3xl mb-6 text-roxo font-bold font-Glacial-Bold">Porque escolher a gente?</h1>
+                    <h2 className="text-xl mb-9 text-laranja font-Montserrat">Venha Realizar Seus Objetivos Conosco</h2>
+                    <p className="text-base mb-14">Na Conste Marketing entendemos seus <span className="text-laranja"> desejos e aspirações</span>. Com nossas soluções <br /> de marketing especializadas, podemos tornar seus sonhos uma realidade. Dê o <br /> próximo passo em direção ao sucesso escolhendo-nos como seu parceiro confiável.</p>
                     <div className="grid gap-4">
                         <div className="flex flex-row gap-16 items-center">
-                            <div className="w-20 h-20 bg-orange-500 rounded-full flex justify-center items-center">
-                                <img src="/qualidade.png" alt="Imagem" className="m-6 p-4" />
+                            <div className="w-20 h-20 bg-laranja rounded-full flex justify-center items-center">
+                                <img src="/images/qualidade.png" alt="Imagem" className="m-6 p-4" />
                             </div>
                             <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold">Serviços de Marketing de Alta Qualidade</h2>
@@ -17,8 +17,8 @@ export function PorqueNos() {
                             </div>
                         </div>
                         <div className="flex flex-row gap-16 items-center mt-8">
-                            <div className="w-20 h-20 bg-orange-500 rounded-full flex justify-center items-center">
-                                <img src="/setores.png" alt="Imagem" className="m-6 p-4" />
+                            <div className="w-20 h-20 bg-laranja rounded-full flex justify-center items-center">
+                                <img src="/images/setores.png" alt="Imagem" className="m-6 p-4" />
                             </div>
                             <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold">Equipe Especializada em Setores Específicos</h2>
@@ -26,8 +26,8 @@ export function PorqueNos() {
                             </div>
                         </div>
                         <div className="flex flex-row gap-16 items-center mt-8">
-                            <div className="w-20 h-20 bg-orange-500 rounded-full flex justify-center items-center">
-                                <img src="/resultados.png" alt="Imagem" className="m-6 p-4" />
+                            <div className="w-20 h-20 bg-laranja rounded-full flex justify-center items-center">
+                                <img src="/images/resultados.png" alt="Imagem" className="m-6 p-4" />
                             </div>
                             <div className="flex flex-col">
                                 <h2 className="text-2xl font-bold">Compromisso com Resultados Mensuráveis</h2>
@@ -37,7 +37,7 @@ export function PorqueNos() {
                     </div>
                 </div>
                 <div className="w-1/2 ml-72 flex items-center justify-center">
-                    <img src="/consultor.png" alt="" width={500} height={500} />
+                    <img src="/images/consultor.png" alt="" width={500} height={500} />
                 </div>
             </div>
 
