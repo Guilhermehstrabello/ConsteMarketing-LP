@@ -11,34 +11,34 @@ const Navbar = () => {
   }
   return (
     <>
-      <nav className="bg-black">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-4">
-          <div className="flex items-center justify-center h-16">
-            <div className="flex items-center justify-start">
+      <nav className="bg-black ">
+        <div className="max-w-10xl mx-auto px-6 sm:px-8 lg:px-4">
+          <div className="flex items-center justify-evenly h-16">
+            <div className="flex items-center">
               <div className="flex-shrink-0">
                 <a href="https://www.constemarketing.com.br" className="text-white">
-                  Logo
+                  <img src="/images/LogoConste.png" alt="Logo Conste Marketing" width={125} height={50} />
                 </a>
               </div>
             </div>
-            <div className="hidden md:block">
-              <div className="ml-4 flex items-center space-x-4">
-                <a href="/" className="text-white hover:text-orange-500 duration-300">
+            <div className="hidden md:block font-Montserrat text-base">
+              <div className="flex items-center space-x-32">
+                <a href="/" className="text-white hover:text-laranja duration-300">
                   Início
                 </a>
-                <a href="/" className="text-white hover:text-orange-500 duration-300">
+                <a href="/" className="text-white hover:text-laranja duration-300">
                   Divisões
                 </a>
-                <a href="/" className="text-white hover:text-orange-500 duration-300">
+                <a href="/" className="text-white hover:text-laranja duration-300">
                   Porque Nós?
                 </a>
-                <a href="/" className="text-white hover:text-orange-500 duration-300">
+                <a href="/" className="text-white hover:text-laranja duration-300">
                   Depoimentos
                 </a>
-                <a href="/" className="text-white hover:text-orange-500 duration-300">
+                <a href="/" className="text-white hover:text-laranja duration-300">
                   Clientes
                 </a>
-                <a href="/" className="text-white bg-orange-500 font-semibold rounded-lg p-2 duration-300 hover:text-orange-500 hover:bg-white ">
+                <a href="/" className="text-white bg-laranja font-semibold rounded-lg p-2 duration-300 hover:text-laranja hover:bg-white ">
                   Contato
                 </a>
               </div>
@@ -80,22 +80,22 @@ const Navbar = () => {
         {isClick && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="/" className="text-white block py-2 hover:text-orange-500 duration-300">
+              <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Início
               </a>
-              <a href="/" className="text-white block py-2 hover:text-orange-500 duration-300">
+              <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Divisões
               </a>
-              <a href="/" className="text-white block py-2 hover:text-orange-500 duration-300">
+              <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Porque Nós?
               </a>
-              <a href="/" className="text-white block py-2 hover:text-orange-500 duration-300">
+              <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Depoimentos
               </a>
-              <a href="/" className="text-white block py-2 hover:text-orange-500 duration-300">
+              <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Clientes
               </a>
-              <a href="/" className="text-white block py-2 bg-orange-500 font-semibold rounded-lg p-2 duration-300 hover:text-orange-500 hover:bg-white">
+              <a href="/" className="text-white block py-2 bg-laranja font-semibold rounded-lg px-1 text-center duration-300 hover:text-laranja hover:bg-white">
                 Contato
               </a>
             </div>

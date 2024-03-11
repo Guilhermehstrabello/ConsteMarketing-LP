@@ -22,11 +22,11 @@ export function Divisoes() {
                     <p className="text-blue-500 text-center mt-4">Conste Tech é responsável por trazer a você um site de alta conversão e fazer com que você venda pela internet.</p>
                     <button className="mt-4 w-64 h-14 p-2 text-white rounded-md bg-blue-500 hover:scale-110 duration-300">Quero ter meu próprio site</button>
                 </div>
-                <div className="w-[380px] h-[330px] flex flex-col items-center p-6 justify-between bg-white border-cyan-500 border-2 rounded-xl">
-                    <h2 className="text-cyan-500 font-bold text-2xl">Conste Creators</h2>
-                    <p className="text-cyan-500 text-center mt-4">Conste Creators é responsável por fazer com que você tenha presença online atráves das redes sociais.</p>
+                <div className="w-[380px] h-[330px] flex flex-col items-center p-6 justify-between bg-white border-teal-500 border-2 rounded-xl">
+                    <h2 className="text-teal-500 font-bold text-2xl">Conste Creators</h2>
+                    <p className="text-teal-500 text-center mt-4">Conste Creators é responsável por fazer com que você tenha presença online atráves das redes sociais.</p>
                     <div className="flex flex-col items-stretch">
-                        <button className="mt-4 w-64 h-14 p-2 text-white rounded-md bg-cyan-500 hover:scale-110 duration-300">Quero ter uma presença online</button>
+                        <button className="mt-4 w-64 h-14 p-2 text-white rounded-md bg-teal-500 hover:scale-110 duration-300">Quero ter uma presença online</button>
                     </div>
                 </div>
             </div>
