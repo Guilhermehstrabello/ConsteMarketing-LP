@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import '/src/app/style.css';
 
 export function HeroSection() {
     return (
