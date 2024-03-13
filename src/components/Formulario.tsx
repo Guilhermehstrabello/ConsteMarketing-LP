@@ -22,18 +22,16 @@ export default class Formulario extends Component<{}, FormularioState> {
     };
   }
 
-  changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  changeHandler = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ [e.target.name]: e.target.value } as Pick<FormularioState, keyof FormularioState>);
   };
 
   submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(this.state);
 
     axios.post('https://sheet.best/api/sheets/a15e04dc-7ba3-4b5b-aa38-07b7c2fa08ac', this.state)
-    .then(response => {
-      console.log(response);
-    })
+      .then(response => {
+      })
   };
 
 
@@ -54,10 +52,21 @@ export default class Formulario extends Component<{}, FormularioState> {
             <input type="email" name="email" value={email} onChange={this.changeHandler} className="form-input mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" required placeholder='Email' />
           </div>
           <div className="mb-4 w-72">
-            <input type="text" name="funcionarios" value={funcionarios} onChange={this.changeHandler} className="form-input mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" required placeholder='Número de Funcionários' />
+            <select name="funcionarios" value={funcionarios} onChange={this.changeHandler} className="form-select mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray'}} required>
+              <option value="">Número de Funcionários</option>
+              <option value="Entre 1-10 Funcionários">Entre 1-10 Funcionários</option>
+              <option value="Entre 11-20 Funcionários">Entre 11-20 Funcionários</option>
+              <option value="Entre 21-30 Funcionários">Entre 21-30 Funcionários</option>
+              <option value="Mais de 100 Funcionários">Mais de 100 Funcionários</option>
+            </select>
           </div>
           <div className="mb-4 w-72">
-            <input type="text" name="faturamento" value={faturamento} onChange={this.changeHandler} className="form-input mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" required placeholder='Faturamento Mensal' />
+            <select name="faturamento" value={faturamento} onChange={this.changeHandler} className="form-select mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray'}} required>
+              <option value="">Faturamento Mensal</option>
+              <option value="Entre R$ 10.000 - R$ 100.000">Entre R$ 10.000 - R$ 100.000</option>
+              <option value="Entre R$ 100.000 - R$ 500.000">Entre R$ 100.000 - 500.000</option>
+              <option value="Mais de R$ 500.000">Mais de R$ 500.000</option>
+            </select>
           </div>
           <button type="submit" className="bg-laranja hover:bg-gray-700 duration-300 my-auto text-white font-bold py-2 px-4 rounded w-36 mb-24">Enviar</button>
         </form>
