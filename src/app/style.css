@@ -1,0 +1,31 @@
+.move-up-down-enter {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.move-up-down-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.move-up-down-enter-done {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.move-up-down-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.move-up-down-exit-active {
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.move-up-down-exit-done {
+  transform: translateY(0);
+  opacity: 0;
+}
