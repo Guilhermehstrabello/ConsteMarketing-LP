@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 interface FormularioState {
   nome: string;
@@ -7,6 +7,8 @@ interface FormularioState {
   telefone: string;
   funcionarios: string;
   faturamento: string;
+  enviado: boolean;
+  showModal: boolean;
 }
 
 export default class Formulario extends Component<{}, FormularioState> {
@@ -18,28 +20,35 @@ export default class Formulario extends Component<{}, FormularioState> {
       email: '',
       telefone: '',
       funcionarios: '',
-      faturamento: ''
+      faturamento: '',
+      enviado: false,
+      showModal: false
     };
   }
 
-  changeHandler = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
+  changeHandler = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
     this.setState({ [e.target.name]: e.target.value } as Pick<FormularioState, keyof FormularioState>);
   };
 
-  submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    axios.post('https://sheet.best/api/sheets/a15e04dc-7ba3-4b5b-aa38-07b7c2fa08ac', this.state)
-      .then(response => {
-      })
+    try {
+      await axios.post('https://sheet.best/api/sheets/a15e04dc-7ba3-4b5b-aa38-07b7c2fa08ac', this.state);
+      this.setState({ enviado: true, showModal: true });
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
+    }
   };
 
+  closeModal = () => {
+    this.setState({ showModal: false });
+  };
 
   render() {
-    const { nome, email, telefone, funcionarios, faturamento } = this.state;
+    const { nome, email, telefone, funcionarios, faturamento, enviado, showModal } = this.state;
     return (
       <>
-
         <h1 className='text-laranja text-5xl font-bold text-center mt-16 mb-24'>Mantenha Constancia no Seu <br /> Crescimento Conosco</h1>
         <form onSubmit={this.submitHandler} className="max-w-full w-screen gap-4 flex flex-col items-center m-auto mt-8">
           <div className="mb-4 w-72">
@@ -64,13 +73,22 @@ export default class Formulario extends Component<{}, FormularioState> {
             <select name="faturamento" value={faturamento} onChange={this.changeHandler} className="form-select mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray'}} required>
               <option value="">Faturamento Mensal</option>
               <option value="Entre R$ 10.000 - R$ 100.000">Entre R$ 10.000 - R$ 100.000</option>
-              <option value="Entre R$ 100.000 - R$ 500.000">Entre R$ 100.000 - 500.000</option>
+              <option value="Entre R$ 100.000 - R$ 500.000">Entre R$ 100.000 - R$ 500.000</option>
               <option value="Mais de R$ 500.000">Mais de R$ 500.000</option>
             </select>
           </div>
           <button type="submit" className="bg-laranja hover:bg-gray-700 duration-300 my-auto text-white font-bold py-2 px-4 rounded w-36 mb-24">Enviar</button>
         </form>
+        {showModal && (
+          <div className="fixed inset-0 z-10 overflow-y-auto flex justify-center items-center">
+            <div className="fixed inset-0 bg-black opacity-50"></div>
+            <div className="bg-white rounded-lg p-8 max-w-md">
+              <p className="text-center">Entraremos em contato em breve!</p>
+              <button onClick={this.closeModal} className="bg-laranja hover:bg-gray-700 duration-300 my-auto text-white font-bold py-2 px-4 rounded mt-4">Fechar</button>
+            </div>
+          </div>
+        )}
       </>
-    )
+    );
   }
 }
