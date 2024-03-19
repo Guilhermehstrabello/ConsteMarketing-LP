@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import React from "react";
+import ReactTooltip from 'react-tooltip';
 
 const Navbar = () => {
 
@@ -22,7 +23,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className="hidden md:block font-Montserrat text-base">
-              <div className="flex items-center space-x-32">
+              <div className="flex items-center space-x-32 text-base">
                 <a href="/" className="text-white hover:text-laranja duration-300">
                   Início
                 </a>
@@ -37,6 +38,9 @@ const Navbar = () => {
                 </a>
                 <a href="/" className="text-white hover:text-laranja duration-300">
                   Clientes
+                </a>
+                <a href="/newsletter" className="text-white pointer-events-none">
+                  Newsletter
                 </a>
                 <a href="/" className="text-white bg-laranja font-semibold rounded-lg p-2 duration-300 hover:text-laranja hover:bg-white ">
                   Contato

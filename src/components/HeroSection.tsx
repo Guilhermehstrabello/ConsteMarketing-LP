@@ -34,7 +34,7 @@ export function HeroSection() {
                     </h1>
                     <h1 className="text-laranja flex flex-col items-center xl:text-6xl lg:text-3xl md:text-2xl sm:text-xl font-Montserrat">
                         Jornada Rumo Ao
-                        <span className="text-roxo bg-laranja p-3 font-Montserrat">
+                        <span className="text-white bg-laranja p-3 font-Montserrat">
                             Topo?
                         </span>
                     </h1>
@@ -47,7 +47,7 @@ export function HeroSection() {
                 <button className="lg:p-3 bg-laranja m-10 lg:text-white md:text-white font-bold rounded-lg hover:bg-roxo duration-300 font-NeueMontreal-Bold antialiased">Conheça nosso trabalho</button>
             </div>
             <div>
-                <img src="/Ilustração.png" alt="Ilustração" className="m-auto w-56 h-56 mt-3" />
+                <img src="/images/Ilustração.png" alt="Ilustração" className="m-auto w-56 h-56 mt-3" />
             </div>
         </>
     )
