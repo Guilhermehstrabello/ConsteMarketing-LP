@@ -51,7 +51,7 @@ export default function Rodape() {
                         </div>
                     </div>
                 </div>
-                <div className="w-[1720px] bg-white h-1 m-auto mt-7"></div>
+                <div className="lg:w-[1720px] w-[500px] bg-white h-1 m-auto mt-7"></div>
                 <div className="flex justify-center items-center flex-row mt-10">
                     <p className="text-white">© 2024 Conste Marketing. Todos Direitos reservados.</p>
                 </div>
