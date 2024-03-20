@@ -1,7 +1,6 @@
 "use client"
 import { useState } from "react"
 import React from "react";
-import ReactTooltip from 'react-tooltip';
 
 const Navbar = () => {
 
@@ -22,8 +21,8 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
-            <div className="hidden md:block font-Montserrat text-base">
-              <div className="flex items-center space-x-32 text-base">
+            <div className=" hidden md:hidden lg:block font-Montserrat">
+              <div className="flex items-center justify-center xl:space-x-28 lg:space-x-10 md:space-x-2 xl:text-sm lg:text-sm text-sm">
                 <a href="/" className="text-white hover:text-laranja duration-300">
                   Início
                 </a>
@@ -39,15 +38,15 @@ const Navbar = () => {
                 <a href="/" className="text-white hover:text-laranja duration-300">
                   Clientes
                 </a>
-                <a href="/newsletter" className="text-white pointer-events-none">
+                <a href="/newsletter" className="text-white hover:text-laranja duration-300">
                   Newsletter
                 </a>
-                <a href="/" className="text-white bg-laranja font-semibold rounded-lg p-2 duration-300 hover:text-laranja hover:bg-white ">
+                <a href="/" className="text-white bg-laranja font-semibold rounded-lg p-2 duration-300 hover:text-laranja hover:bg-white">
                   Contato
                 </a>
               </div>
             </div>
-            <div className="md:hidden flex items-center">
+            <div className="lg:hidden flex items-center">
               <button className="inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white
               focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 onClick={toggleNavbar}
@@ -82,8 +81,8 @@ const Navbar = () => {
           </div>
         </div>
         {isClick && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="lg:hidden flex justify-center md:flex md:justify-center">
+            <div className="px-4 pt-2 pb-3 space-y-2">
               <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Início
               </a>
@@ -99,6 +98,9 @@ const Navbar = () => {
               <a href="/" className="text-white block py-2 hover:text-laranja duration-300">
                 Clientes
               </a>
+              <a href="/newsletter" className="text-white block py-2 hover:text-laranja duration-300">
+                  Newsletter
+                </a>
               <a href="/" className="text-white block py-2 bg-laranja font-semibold rounded-lg px-1 text-center duration-300 hover:text-laranja hover:bg-white">
                 Contato
               </a>

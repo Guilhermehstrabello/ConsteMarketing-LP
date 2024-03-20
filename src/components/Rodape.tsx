@@ -3,24 +3,24 @@
 export default function Rodape() {
     return (
         <>
-            <div className="h-[480px] w-full bg-laranja">
-                <div className="flex flex-row justify-between">
-                    <div className="flex flex-col">
-                        <img src="/images/logo.png" alt="Logo Conste Marketing" className="mt-10 ml-24 w-[200px] h-[200px]" />
-                        <p className="text-white text-1xl flex flex-col ml-32 hover:underline duration-300"><a href="#">19 97427-4982</a></p>
-                        <p className="text-white text-1xl flex flex-col ml-32 mt-3 hover:underline duration-500"><a href="mailto:eduardo@constemarketing.com.br">support@lift.agency</a></p>
+            <div className="lg:h-[480px] w-full bg-laranja">
+                <div className="flex lg:flex-row flex-col justify-between">
+                    <div className="flex flex-col items-center justify-center">
+                        <img src="/images/logo.png" alt="Logo Conste Marketing" className="mt-10 lg:ml-24 w-[200px] h-[200px]" />
+                        <p className="text-white text-1xl flex flex-col lg:ml-32 hover:underline duration-300"><a href="#">19 97427-4982</a></p>
+                        <p className="text-white text-1xl flex flex-col lg:ml-32 mt-3 hover:underline duration-500"><a href="mailto:eduardo@constemarketing.com.br">support@lift.agency</a></p>
                     </div>
-                    <div className="flex flex-col gap-3">
-                        <p className="text-white text-2xl ml-32 mt-32 font-bold">Links</p>
-                        <p className="text-white text-1xl ml-32 hover:underline duration-300 hover:cursor-pointer">Clientes</p>
-                        <p className="text-white text-1xl ml-32 hover:underline duration-300 hover:cursor-pointer">Serviços</p>
-                        <p className="text-white text-1xl ml-32 hover:underline duration-300 hover:cursor-pointer">Porque a gente?</p>
-                        <p className="text-white text-1xl ml-32 hover:underline duration-300 hover:cursor-pointer">Depoimentos</p>
-                        <p className="text-white text-1xl ml-32 hover:underline duration-300 hover:cursor-pointer">Contato</p>
+                    <div className="flex flex-col items-center justify-center gap-4">
+                        <p className="text-white text-2xl lg:ml-32 mt-20 font-bold">Links</p>
+                        <p className="text-white text-1xl lg:ml-32 hover:underline duration-300 hover:cursor-pointer">Clientes</p>
+                        <p className="text-white text-1xl lg:ml-32 hover:underline duration-300 hover:cursor-pointer">Serviços</p>
+                        <p className="text-white text-1xl lg:ml-32 hover:underline duration-300 hover:cursor-pointer">Porque a gente?</p>
+                        <p className="text-white text-1xl lg:ml-32 hover:underline duration-300 hover:cursor-pointer">Depoimentos</p>
+                        <p className="text-white text-1xl lg:ml-32 hover:underline duration-300 hover:cursor-pointer">Contato</p>
                     </div>
-                    <div className="flex flex-col gap-3">
-                        <p className="text-white text-2xl flex flex-col mr-32 mt-32 font-bold">Redes Sociais</p>
-                        <div className="flex flex-row gap-7 items-center mt-4">
+                    <div className="flex flex-col items-center justify-center gap-3">
+                        <p className="text-white text-2xl flex flex-col lg:mr-32 mt-16 font-bold">Redes Sociais</p>
+                        <div className="flex flex-row gap-10 items-center mt-10">
                             <a href="https://www.instagram.com/constemarketing/" target="_blank" className="[&>svg]:h-7 [&>svg]:w-7 border-slate-200/15 border-2 p-2 rounded-full hover:scale-110 duration-300 hover:bg-cinza">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

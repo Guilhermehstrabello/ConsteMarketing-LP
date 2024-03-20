@@ -50,7 +50,7 @@ export default class Formulario extends Component<{}, FormularioState> {
     const { nome, email, telefone, funcionarios, faturamento, enviado } = this.state;
     return (
       <>
-        <h1 className='text-laranja text-5xl font-bold text-center mt-16 mb-24'>Mantenha Constancia no Seu <br /> Crescimento Conosco</h1>
+        <h1 className='text-laranja lg:text-5xl text-3xl font-bold text-center mt-16 mb-24'>Mantenha Constancia no Seu <br /> Crescimento Conosco</h1>
         <form onSubmit={this.submitHandler} className="max-w-full w-screen gap-4 flex flex-col items-center m-auto mt-8">
           <div className="mb-4 w-72">
             <input type="text" name="nome" value={nome} onChange={this.changeHandler} className="form-input mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" required placeholder='Nome da Empresa' />
