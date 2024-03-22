@@ -8,8 +8,8 @@ import { PorqueNos } from "@/components/PorqueNós";
 import { Depoimentos } from "@/components/Depoimentos";
 import { Clientes } from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
-import Formulario from "@/components/Formulario";
 import Rodape from "@/components/Rodape";
+import Formulario  from "@/components/Formulario";
 
 
 export default function Home() {
