@@ -9,3 +9,39 @@
     -webkit-font-smoothing: antialiased;
     -webkit-font-smoothing: auto;
 }
+
+h1{
+    font-family: var(--font-montserrat-bold);
+}
+
+h2{
+    font-family: var(--font-montserrat-bold);
+}
+
+h3{
+    font-family: var(--font-montserrat-bold);
+}
+
+h4{
+    font-family: var(--font-neue-bold);
+}
+
+h5{
+    font-family: var(--font-glacial-regular);
+}
+
+h6{
+    font-family: var(--font-glacial-bold);
+}
+
+p{
+    font-family: var(--font-neue-regular);
+}
+
+a{
+    font-family: var(--font-montserrat);
+}
+
+button{
+    font-family: var(--font-montserrat-bold);
+}

@@ -7,22 +7,21 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: { 
-      'laranja' : '#FF8500',
-      'roxo' : '#310276',
-      'cinza' : '#474747'
+    colors: {
+      'laranja': '#FF8500',
+      'roxo': '#310276',
+      'cinza': '#474747'
     },
     extend: {
       fontFamily: {
-        Neue: ['NeueMontreal', 'sans-serif'],
-        Glacial: ['Glacialindifference', 'sans-serif'],
-        Montserrat: ['Montserrat', 'sans-serif'],
+        'GlacialIndifference-Regular': ['GlacialIndifference-Regular', 'sans-serif'],
+        'GlacialIndifference-Bold': ['GlacialIndifference-Bold', 'sans-serif'],
+        'Montserrat-Bold': ['Montserrat-Bold', 'sans-serif'],
+        'Montserrat-SemiBold': ['Montserrat-SemiBold', 'sans-serif'],
+        'NeueMontreal-Bold': ['NeueMontreal-Bold', 'sans-serif'],
+        'NeueMontreal-Medium': ['NeueMontreal-Medium', 'sans-serif']
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+
     },
   },
   plugins: [

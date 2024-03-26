@@ -11,7 +11,6 @@ import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario  from "@/components/Formulario";
 
-
 export default function Home() {
   return (
     <>
@@ -19,13 +18,23 @@ export default function Home() {
         <ProgressBar />
         <Navbar />
         <HeroSection />
-        <Divisoes />
+        <div id="divisoes">
+          <Divisoes />
+        </div>
         <Porque />
         <Blur />
-        <PorqueNos />
-        <Depoimentos />
-        <Clientes />
-        <Formulario />
+        <div id="porque">
+          <PorqueNos />
+        </div>
+        <div id="depoimentos">
+          <Depoimentos />
+        </div>
+        <div id="clientes">
+          <Clientes />
+        </div>
+        <div id="form">
+          <Formulario />
+        </div>
         <Rodape />
       </div>
     </>
