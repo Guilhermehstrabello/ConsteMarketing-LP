@@ -10,8 +10,6 @@ import Clientes from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario from "@/components/Formulario";
-import FadeInPage from "@/components/FadeInPage"; 
-
 
 export default function Home() {
   return (
