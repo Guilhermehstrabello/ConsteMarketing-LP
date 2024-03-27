@@ -1,3 +1,12 @@
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+};
+
 export function Depoimentos() {
     return (
         <>
@@ -18,7 +27,15 @@ export function Depoimentos() {
                     </div>
                 </div>
                 <div className="flex justify-center items-center">
-                    <button className="lg:p-4 p-2 bg-purple-800 mt-28 lg:text-white md:text-white text-white font-bold rounded-lg hover:bg-white hover:text-laranja duration-300 w-36 hover:scale-110">Contato</button>
+                    <button className="lg:p-4 p-2 bg-purple-800 mt-16 mb-16 lg:text-white md:text-white text-white font-bold rounded-lg hover:bg-white hover:text-laranja duration-300 w-36 hover:scale-110"onClick={(e) => {
+                        e.preventDefault();
+                        const element = document.getElementById('form');
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }}>
+                        Contato
+                    </button>
                 </div>
             </div>
         </>

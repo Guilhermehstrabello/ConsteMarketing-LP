@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
 
 const Navbar = () => {
   const [isClick, setIsClick] = useState(false);
@@ -11,18 +12,40 @@ const Navbar = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth'});
+        behavior: 'smooth'
+      });
     }
   };
 
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Função para animar o fade-in
+    const fadeIn = (elements: HTMLElement[]) => {
+      gsap.set(elements, { opacity: 0 });
+      gsap.to(elements, {
+        opacity: 1,
+        duration: 1.5,
+        ease: 'back.inOut',
+      });
+    };
+
+    const navElement = navRef.current;
+
+    if (!navElement) return;
+
+    fadeIn([navElement]);
+
+  }, []);
+
   return (
-    <nav className="bg-black lg:h-24 lg:flex lg:items-center">
+    <nav ref={navRef} className="bg-black lg:h-24 lg:flex lg:items-center">
       <div className="max-w-10xl mx-auto px-6 sm:px-8 lg:px-4">
         <div className="flex items-center justify-center gap-44 h-16">
           <div className="flex items-center">
-              <a className="text-white cursor-pointer" onClick={() => window.location.reload()}>
-                <img src="/images/LogoConste.png" alt="Logo Conste Marketing" width={125} height={50} />
-              </a>
+            <a className="text-white cursor-pointer" onClick={() => window.location.reload()}>
+              <img src="/images/LogoConste.png" alt="Logo Conste Marketing" width={125} height={50} />
+            </a>
           </div>
           <div className="hidden md:hidden lg:block font-medium">
             <div className="flex items-center justify-center xl:space-x-32 lg:space-x-10 md:space-x-2 xl:text-base">
