@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
@@ -51,7 +50,7 @@ export function Divisoes() {
         return () => {
             observer.unobserve(targetElement);
         };
-    }, [hasAnimated]);  // Adicionado hasAnimated como dependência
+    }, [hasAnimated]);
 
     return (
         <>
@@ -60,7 +59,7 @@ export function Divisoes() {
                     <h1 className="text-laranja text-center xl:text-3xl md:text-3xl text-2xl mt-16 ">
                         Contamos Com Uma Rede de Divisões Estratégicas
                     </h1>
-                    <h3 className="text-roxo text-center mt-12 lg:text-base text-base antialiased">Nossa empresa é divida em 3 divisões, visando entregas com maior qualidade do serviço que você está <br /> contratando conosco, e as 3 são essenciais para você criar sua presença online e conquistar mais clientes.</h3>
+                    <h3 className="text-roxo lg:text-center md:text-center text-left mt-12 lg:text-base text-base antialiased">Nossa empresa é divida em 3 divisões, visando entregas com maior qualidade do serviço que você está <br /> contratando conosco, e as 3 são essenciais para você criar sua presença online e conquistar mais clientes.</h3>
                 </div>
                 <div ref={div2Ref} className="flex lg:flex-row md:flex-col flex-col gap-8 items-center justify-center mt-14 ">
                     <div className="w-[380px] h-[330px] flex flex-col items-center p-6 justify-between bg-white border-indigo-600 border-2 rounded-xl group hover:scale-105 hover:bg-indigo-600 duration-300">

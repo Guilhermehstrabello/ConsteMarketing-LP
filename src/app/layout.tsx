@@ -6,6 +6,7 @@ import NeueBold from 'next/font/local'
 import GlacialRegular from 'next/font/local'
 import GlacialBold from 'next/font/local'
 import { Montserrat } from 'next/font/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const montserrat = Montserrat({
   weight: ['600'],
@@ -59,6 +60,7 @@ export default function RootLayout({
 
   return (
     <html lang="pt-br" className={`${neue.variable} ${glacialBold.variable} ${glacialRegular.variable} ${neueBold.variable} ${montserrat.variable} ${montserratBold.variable}`}>
+      <GoogleTagManager gtmId="GTM-TVRWH47F"/>
       <body>
         {children}
       </body>

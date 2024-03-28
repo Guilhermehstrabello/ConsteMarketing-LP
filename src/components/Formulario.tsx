@@ -1,4 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+
+const useIntersectionObserver = (elementRef: React.RefObject<HTMLElement>, callback: () => void) => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            callback();
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [elementRef, callback]);
+};
 
 export default function Formulario() {
 
@@ -10,6 +38,37 @@ export default function Formulario() {
 
   const [selection1, setSelection1] = useState("");
   const [selection2, setSelection2] = useState("");
+
+  const formRef = useRef(null);
+  const titleRef = useRef(null);
+
+  const animateForm = () => {
+    gsap.from(".form-input, .form-select, button", {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      delay: 0.5,
+      stagger: 0.2,
+      ease: "power3.out",
+      onComplete: () => {
+        gsap.set(".form-input, .form-select, button", { clearProps: 'all' });
+      }
+    });
+  };
+
+  const animateTitle = () => {
+    gsap.from(titleRef.current, {
+      opacity: 0,
+      duration: 1.5,
+      ease: "power3.out",
+      onComplete: () => {
+        gsap.set(titleRef.current, { clearProps: 'all' });
+      }
+    });
+  };
+
+  useIntersectionObserver(titleRef, animateTitle);
+  useIntersectionObserver(formRef, animateForm);
 
   const formatarTelefone = (value: string) => {
     const cleanedValue = value.replace(/\D/g, "");
@@ -70,11 +129,11 @@ export default function Formulario() {
 
   return (
     <>
-      <h1 className='text-laranja lg:text-4xl text-3xl font-bold text-center mt-10 mb-16'>Mantenha Constancia no Seu <br /> Crescimento Conosco</h1>
-      <form className="max-w-full w-screen gap-4 flex flex-col items-center m-auto mt-0" onSubmit={send}>
+      <h1 ref={titleRef} className='text-laranja lg:text-4xl text-3xl font-bold text-center mt-10 mb-16'>Mantenha Constancia no Seu <br /> Crescimento Conosco</h1>
+      <form ref={formRef} className="max-w-full w-screen gap-4 flex flex-col items-center m-auto mt-0" onSubmit={send}>
         <div className="mb-4 w-72">
           <input
-            className="form-input mt-1 mb-4 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg"
+            className="form-input mt-1 mb-4 block w-full rounded text-gray-500 border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg"
             type="text"
             id="nome"
             name="nome"  // Corrigido o nome do campo para "nome"
@@ -86,7 +145,7 @@ export default function Formulario() {
         </div>
         <div className="mb-4 w-72">
           <input
-            className="form-input mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg"
+            className="form-input mt-1 block w-full rounded text-gray-500 border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg"
             type="tel"  // Alterado para type="tel"
             id="telefone"
             name="telefone"
@@ -98,7 +157,7 @@ export default function Formulario() {
         </div>
         <div className="mb-4 w-72">
           <input
-            className="form-input mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg"
+            className="form-input mt-1 block w-full rounded text-gray-500 border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg"
             type="email"
             id="email"
             name="email"  // Corrigido o nome do campo para "email"
@@ -109,16 +168,16 @@ export default function Formulario() {
           />
         </div>
         <div className="mb-4 w-72">
-          <select value={selection1} onChange={handleSelection1Change} className="form-select mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray' }}>
+          <select value={selection1} onChange={handleSelection1Change} className="form-select mt-1 block w-full rounded text-gray-500 border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray' }}>
             <option value="">Número de Funcionários</option>
             <option value="1 - 10 Funcionários">1 - 10 Funcionários</option>
-            <option value="11 - 20 Funcionários">11 - 20 Funcionários</option>  // Corrigido o valor da opção
-            <option value="21 - 30 Funcionários">21 - 30 Funcionários</option>  // Corrigido o valor da opção
-            <option value="Mais de 30 Funcionários">Mais de 30 Funcionários</option>  // Corrigido o valor da opção
+            <option value="11 - 20 Funcionários">11 - 20 Funcionários</option>
+            <option value="21 - 30 Funcionários">21 - 30 Funcionários</option>
+            <option value="Mais de 30 Funcionários">Mais de 30 Funcionários</option>
           </select>
         </div>
         <div className="mb-4 w-72">
-          <select value={selection2} onChange={handleSelection2Change} className="form-select mt-1 block w-full rounded border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray' }}>
+          <select value={selection2} onChange={handleSelection2Change} className="form-select mt-1 block w-full rounded text-gray-500 border-gray-400 focus:border-laranja focus:ring-laranja focus:outline-none p-3 text-lg" style={{ backgroundColor: 'white', color: 'gray' }}>
             <option value="">Faturamento Mensal</option>
             <option value="Entre R$ 10.000 - R$ 100.000">Entre R$ 10.000 - R$ 100.000</option>
             <option value="Entre R$ 100.000 - R$ 250.000">Entre R$ 100.000 - R$ 250.000</option>

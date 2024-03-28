@@ -40,7 +40,7 @@ export function HeroSection() {
       gsap.set(elements, { opacity: 0 });
       gsap.to(elements, {
         opacity: 1,
-        duration: 2.5,
+        duration: 3.5,
         ease: 'back.inOut',
       });
     };

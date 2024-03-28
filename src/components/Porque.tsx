@@ -24,7 +24,7 @@ export function Porque() {
         const fadeIn = (element: HTMLElement) => {
             gsap.fromTo(element, { opacity: 0 }, {
                 opacity: 1,
-                duration: 2,
+                duration: 3.5,
                 ease: 'power2.inOut',
                 onComplete: () => {
                     setHasAnimated(true);
@@ -65,7 +65,7 @@ export function Porque() {
                     <h1 className="text-laranja text-center xl:text-4xl lg:text-3xl text-2xl">Porque o seu negócio precisa <br /> da Conste Marketing?</h1>
                     <h2 className="text-center text-roxo lg:text-2xl md:text-2xl text-xl mt-14 ">Somos especialistas em alavancar <br /> empresas atráves da presença online</h2>
                     <div className="lg:text-center text-start mt-12 mb-28">
-                        <p className="lg:text-xl md:text-lg text-base text-center">Nos dias de hoje, o marketing digital é <span className="text-laranja"> indispensável </span> para empresas que almejam se <br /> destacar, pois desempenha um papel fundamental na <span className="text-orange-500"> atração </span> de consumidores e <br /> tem se revelado uma ferramenta poderosa para impulsionar o <span className="text-orange-500"> crescimento financeiro</span>.</p>
+                        <p className="lg:text-xl md:text-lg text-base lg:text-center">Nos dias de hoje, o marketing digital é <span className="text-laranja"> indispensável </span> para empresas que almejam se <br /> destacar, pois desempenha um papel fundamental na <span className="text-orange-500"> atração </span> de consumidores e <br /> tem se revelado uma ferramenta poderosa para impulsionar o <span className="text-orange-500"> crescimento financeiro</span>.</p>
                     </div>
                 </div>
 
