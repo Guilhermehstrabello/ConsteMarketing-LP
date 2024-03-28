@@ -2,12 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const useIntersectionObserver = (elementRef: React.RefObject<HTMLElement>, callback: () => void) => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !hasAnimated) {
             callback();
+            setHasAnimated(true);
           }
         });
       },
@@ -25,7 +28,7 @@ const useIntersectionObserver = (elementRef: React.RefObject<HTMLElement>, callb
         observer.unobserve(elementRef.current);
       }
     };
-  }, [elementRef, callback]);
+  }, [elementRef, callback, hasAnimated]);
 };
 
 export default function Formulario() {

@@ -1,16 +1,102 @@
-"use client"
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export default function Rodape() {
+
+    const logoRef = useRef<HTMLDivElement>(null);
+    const linksRef = useRef<HTMLDivElement>(null);
+    const socialMediaRef = useRef<HTMLDivElement>(null);
+    const barRef = useRef<HTMLDivElement>(null);
+    const copyrightRef = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        if (logoRef.current) {
+            gsap.from(logoRef.current.children, {
+                opacity: 0, // Opacidade inicial para 0
+                y: 1,
+                duration: 2,
+                stagger: 0.2,
+                onComplete: () => {
+                    gsap.to(logoRef.current!.children, {
+                        opacity: 1, // Restaura a opacidade para 1 após a animação
+                        duration: 1.5,
+                    });
+                },
+            });
+        }
+
+        if (linksRef.current) {
+            gsap.from(linksRef.current.children, {
+                opacity: 0, // Opacidade inicial para 0
+                y: 1,
+                duration: 2.5,
+                stagger: 0.2,
+                onComplete: () => {
+                    gsap.to(linksRef.current!.children, {
+                        opacity: 1, // Restaura a opacidade para 1 após a animação
+                        duration: 1.5,
+                    });
+                },
+            });
+        }
+
+        if (socialMediaRef.current) {
+            gsap.from(socialMediaRef.current.children, {
+                opacity: 0, // Opacidade inicial para 0
+                y: 1,
+                duration: 4,
+                stagger: 0.2,
+                onComplete: () => {
+                    gsap.to(socialMediaRef.current!.children, {
+                        opacity: 1, // Restaura a opacidade para 1 após a animação
+                        duration: 1.5,
+                    });
+                },
+            });
+        }
+
+        if (barRef.current) {
+            gsap.from(barRef.current, {
+                opacity: 0, // Opacidade inicial para 0
+                y: 1,
+                duration: 4.5,
+                stagger: 0.2,
+                onComplete: () => {
+                    gsap.to(barRef.current!, {
+                        opacity: 1,
+                        duration: 1.5,
+                    });
+                },
+            });
+        }
+
+        if (copyrightRef.current) {
+            gsap.from(copyrightRef.current, {
+                opacity: 0, // Opacidade inicial para 0
+                y: 1,
+                duration: 5,
+                stagger: 0.2,
+                onComplete: () => {
+                    gsap.to(copyrightRef.current!, {
+                        opacity: 1,
+                        duration: 1.5,
+                    });
+                },
+            });
+        }
+
+    }, []);
+
     return (
         <>
             <div className="lg:h-[480px] w-full bg-laranja">
                 <div className="flex lg:flex-row flex-col justify-center lg:gap-96 mx-48">
-                    <div className="flex flex-col items-center text-lg text-center justify-center">
-                        <img src="/images/logo.png" alt="Logo Conste Marketing" className="mt-10 lg:w-[200px] lg:h-[200px]" />
-                        <p className="text-white text-1xl flex flex-col hover:underline duration-300"><a href="#">19 97427-4982</a></p>
-                        <p className="text-white text-1xl flex flex-col mt-3 hover:underline duration-500"><a href="mailto:eduardo@constemarketing.com.br">support@lift.agency</a></p>
+                    <div ref={logoRef} className="flex flex-col items-center text-lg text-center justify-center">
+                        <img src="/images/logo.png" alt="Logo Conste Marketing" className="mt-10 lg:w-[200px] lg:h-[200px] md:w-[200px] md:h-[200px] w-full h-full" />
+                        <p className="text-white text-base flex flex-col w-[200px] hover:underline duration-300"><a href="#">19 97427-4982</a></p>
+                        <p className="text-white text-base flex flex-col mt-3 hover:underline duration-500"><a href="mailto:eduardo@constemarketing.com.br">support@lift.agency</a></p>
                     </div>
-                    <div className="flex flex-col text-lg text-center items-center justify-center gap-4">
+                    <div ref={linksRef} className="flex flex-col text-lg text-center items-center justify-center gap-4">
                         <p className="text-white text-2xl mt-20 font-bold">Links</p>
                         <p className="text-white text-1xl hover:underline duration-300 hover:cursor-pointer">Clientes</p>
                         <p className="text-white text-1xl hover:underline duration-300 hover:cursor-pointer">Serviços</p>
@@ -18,7 +104,7 @@ export default function Rodape() {
                         <p className="text-white text-1xl hover:underline duration-300 hover:cursor-pointer">Depoimentos</p>
                         <p className="text-white text-1xl hover:underline duration-300 hover:cursor-pointer">Contato</p>
                     </div>
-                    <div className="flex flex-col items-center justify-center gap-3">
+                    <div ref={socialMediaRef} className="flex flex-col items-center justify-center gap-3">
                         <p className="text-white text-2xl text-center flex flex-col mt-16 font-bold">Redes Sociais</p>
                         <div className="flex flex-row gap-10 items-center mt-10">
                             <a href="https://www.instagram.com/constemarketing/" target="_blank" className="[&>svg]:h-7 [&>svg]:w-7 border-slate-200/15 border-2 p-2 rounded-full hover:scale-110 duration-300 hover:bg-cinza">
@@ -51,11 +137,11 @@ export default function Rodape() {
                         </div>
                     </div>
                 </div>
-                <div className="lg:w-[1720px] w-[200px] bg-white h-1 m-auto mt-7"></div>
+                <div ref={barRef} className="lg:w-[1720px] w-[200px] bg-white h-1 m-auto mt-7"></div>
                 <div className="flex justify-center items-center flex-row mt-10">
-                    <p className="text-white">© 2024 Conste Marketing. Todos Direitos reservados.</p>
+                    <p ref={copyrightRef} className="text-white">© 2024 Conste Marketing. Todos Direitos reservados.</p>
                 </div>
             </div>
         </>
-    )
+    );
 }
