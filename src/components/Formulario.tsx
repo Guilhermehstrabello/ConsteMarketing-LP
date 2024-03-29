@@ -49,7 +49,7 @@ export default function Formulario() {
     gsap.from(".form-input, .form-select, button", {
       opacity: 0,
       y: 20,
-      duration: 1,
+      duration: 2,
       delay: 0.5,
       stagger: 0.2,
       ease: "power3.out",
@@ -62,7 +62,8 @@ export default function Formulario() {
   const animateTitle = () => {
     gsap.from(titleRef.current, {
       opacity: 0,
-      duration: 1.5,
+      duration: 2,
+      delay: 1,
       ease: "power3.out",
       onComplete: () => {
         gsap.set(titleRef.current, { clearProps: 'all' });

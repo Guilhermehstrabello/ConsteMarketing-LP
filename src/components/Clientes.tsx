@@ -1,19 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
-const useIntersectionObserver = (elementRef: React.RefObject<HTMLElement>, callback: Function) => {
+const useIntersectionObserver = (elementRef: React.RefObject<HTMLElement>, callback: Function, options: IntersectionObserverInit) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          const threshold = Array.isArray(options.threshold) ? options.threshold[0] : options.threshold || 0;
+          if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
             callback();
           }
         });
       },
-      {
-        threshold: 0.1,
-      }
+      options
     );
 
     if (elementRef.current) {
@@ -25,7 +24,7 @@ const useIntersectionObserver = (elementRef: React.RefObject<HTMLElement>, callb
         observer.unobserve(elementRef.current);
       }
     };
-  }, [elementRef, callback]);
+  }, [elementRef, callback, options]);
 };
 
 const Clientes = () => {
@@ -53,8 +52,8 @@ const Clientes = () => {
     tlLeft.to(imagesLeft, {
       x: '0%',
       duration: 6,
-      stagger: 0.2,
-      delay: 1,
+      stagger: 0.1,
+      delay: 3,
       ease: 'elastic.inOut',
     });
 
@@ -62,8 +61,8 @@ const Clientes = () => {
     tlRight.to(imagesRight, {
       x: '0%',
       duration: 6,
-      stagger: 0.2,
-      delay: 1,
+      stagger: 0.1,
+      delay: 3,
       ease: 'elastic.inOut',
     });
 
@@ -82,7 +81,8 @@ const Clientes = () => {
 
     gsap.from(h1Element, {
       opacity: 0,
-      duration: 3.5,
+      duration: 3,
+      delay: 2.5,
     });
 
     setAnimationStarted(true);
@@ -92,9 +92,9 @@ const Clientes = () => {
     startAnimation(); // Chame a função startAnimation imediatamente após a montagem do componente
   }, []);
 
-  useIntersectionObserver(sliderLeftRef, startAnimation);
-  useIntersectionObserver(sliderRightRef, startAnimation);
-  useIntersectionObserver(h1Ref, fadeInAnimation);
+  useIntersectionObserver(sliderLeftRef, startAnimation, { threshold: 0.2 });
+  useIntersectionObserver(sliderRightRef, startAnimation, { threshold: 0.2 });
+  useIntersectionObserver(h1Ref, fadeInAnimation, { threshold: 0.2 });
 
   return (
     <>

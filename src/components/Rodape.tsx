@@ -8,47 +8,59 @@ export default function Rodape() {
     const socialMediaRef = useRef<HTMLDivElement>(null);
     const barRef = useRef<HTMLDivElement>(null);
     const copyrightRef = useRef<HTMLParagraphElement>(null);
+    const rodapeRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+    const startAnimation = () => {
+        console.log("startAnimation called");
+
         if (logoRef.current) {
+            console.log("Animating logo");
             gsap.from(logoRef.current.children, {
-                opacity: 0, // Opacidade inicial para 0
+                opacity: 0,
                 y: 1,
-                duration: 2,
+                delay: 1,
+                duration: 3,
                 stagger: 0.2,
                 onComplete: () => {
                     gsap.to(logoRef.current!.children, {
-                        opacity: 1, // Restaura a opacidade para 1 após a animação
+                        opacity: 1,
                         duration: 1.5,
                     });
                 },
             });
+        } else {
+            console.log("logoRef is null or logo elements not found");
         }
 
         if (linksRef.current) {
+            console.log("Animating links");
             gsap.from(linksRef.current.children, {
-                opacity: 0, // Opacidade inicial para 0
+                opacity: 0,
                 y: 1,
-                duration: 2.5,
+                delay: 1,
+                duration: 3,
                 stagger: 0.2,
                 onComplete: () => {
                     gsap.to(linksRef.current!.children, {
-                        opacity: 1, // Restaura a opacidade para 1 após a animação
+                        opacity: 1,
                         duration: 1.5,
                     });
                 },
             });
+        } else {
+            console.log("linksRef is null or links elements not found");
         }
 
         if (socialMediaRef.current) {
             gsap.from(socialMediaRef.current.children, {
-                opacity: 0, // Opacidade inicial para 0
+                opacity: 0,
                 y: 1,
-                duration: 4,
+                delay: 1,
+                duration: 3,
                 stagger: 0.2,
                 onComplete: () => {
                     gsap.to(socialMediaRef.current!.children, {
-                        opacity: 1, // Restaura a opacidade para 1 após a animação
+                        opacity: 1,
                         duration: 1.5,
                     });
                 },
@@ -57,9 +69,10 @@ export default function Rodape() {
 
         if (barRef.current) {
             gsap.from(barRef.current, {
-                opacity: 0, // Opacidade inicial para 0
+                opacity: 0,
                 y: 1,
-                duration: 4.5,
+                delay: 1,
+                duration: 3,
                 stagger: 0.2,
                 onComplete: () => {
                     gsap.to(barRef.current!, {
@@ -72,9 +85,10 @@ export default function Rodape() {
 
         if (copyrightRef.current) {
             gsap.from(copyrightRef.current, {
-                opacity: 0, // Opacidade inicial para 0
+                opacity: 0,
                 y: 1,
-                duration: 5,
+                delay: 1,
+                duration: 3,
                 stagger: 0.2,
                 onComplete: () => {
                     gsap.to(copyrightRef.current!, {
@@ -84,12 +98,40 @@ export default function Rodape() {
                 },
             });
         }
+    };
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        startAnimation();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1,
+            }
+        );
+
+        if (rodapeRef.current) {
+            observer.observe(rodapeRef.current);
+        }
+
+        return () => {
+            if (rodapeRef.current) {
+                observer.unobserve(rodapeRef.current);
+            }
+        };
     }, []);
+
 
     return (
         <>
-            <div className="lg:h-[480px] w-full bg-laranja">
+            <div ref={rodapeRef} className="lg:h-[480px] w-full bg-laranja">
                 <div className="flex lg:flex-row flex-col justify-center lg:gap-96 mx-48">
                     <div ref={logoRef} className="flex flex-col items-center text-lg text-center justify-center">
                         <img src="/images/logo.png" alt="Logo Conste Marketing" className="mt-10 lg:w-[200px] lg:h-[200px] md:w-[200px] md:h-[200px] w-full h-full" />
