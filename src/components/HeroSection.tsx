@@ -27,7 +27,7 @@ export function HeroSection() {
       gsap.to(element, {
         opacity: 1,
         x: gsap.utils.random(-50, 50),
-        y: gsap.utils.random(-200, 200),
+        y: gsap.utils.random(-100, 100),
         duration: 2,
         repeat: -1,
         yoyo: true,
