@@ -6,7 +6,6 @@ export default function Obrigado() {
                     Seu formulário foi enviado com sucesso.
                 </h1>
                 <h3 className="font-medium lg:text-lg text-base text-center text-laranja">
-                    O E-Book 📚 foi enviado no seu e-mail, olhe na sua caixa de entrada ou spam. 📧 <br />
                     Já iremos entrar em contato para falar sobre como podemos te ajudar com seu négocio.😊
                 </h3>
             </div>
