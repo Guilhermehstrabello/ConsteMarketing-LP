@@ -10,15 +10,11 @@ import Clientes from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario from "@/components/Formulario";
-import Head from "next/head";
 
 export default function Home() {
   return (
 
     <div>
-      <Head>
-        <meta name="description" content="Marketing digital de alta qualidade para impulsionar o seu negócio" />
-      </Head>
       <ProgressBar />
       <Navbar />
       <HeroSection />
