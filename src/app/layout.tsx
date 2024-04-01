@@ -1,4 +1,3 @@
-// Importe o componente Head do next
 import "./globals.css";
 import { Metadata } from "next";
 import NeueMedium from 'next/font/local'
