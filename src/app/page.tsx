@@ -1,4 +1,3 @@
-'use client'
 import Navbar from "@/components/Navbar";
 import { Divisoes } from "@/components/Divisões";
 import { HeroSection } from "@/components/HeroSection";
