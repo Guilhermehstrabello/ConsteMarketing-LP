@@ -17,7 +17,6 @@ export default function Home() {
 
     <div>
       <Head>
-        <title>Conste Marketing</title>
         <meta name="description" content="Marketing digital de alta qualidade para impulsionar o seu negócio" />
       </Head>
       <ProgressBar />
