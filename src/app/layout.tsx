@@ -48,7 +48,6 @@ const glacialBold = GlacialBold({
 
 export const metadata: Metadata = {
   title: "Conste Marketing",
-  description: "Testando descrição",
   icons: {icon: "../../favicon/favicon.png"}
 };
 
