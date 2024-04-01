@@ -66,7 +66,6 @@ export default function RootLayout({
     <html lang="pt-br" className={`${neue.variable} ${glacialBold.variable} ${glacialRegular.variable} ${neueBold.variable} ${montserrat.variable} ${montserratBold.variable}`}>
       <GoogleTagManager gtmId="GTM-TVRWH47F"/>
       <body>
-        {children}
       </body>
     </html>
   );
