@@ -14,14 +14,6 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Conste Marketing</title>
-        <meta
-          name="description"
-          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
-          key="desc"
-        />
-      </Head>
       <ProgressBar />
       <Navbar />
       <HeroSection />

@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "Conste Marketing | Agência de Marketing Digital"
   },
+  description: "Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice.",
   icons: {icon: "../../favicon/favicon.png"}
 };
 
