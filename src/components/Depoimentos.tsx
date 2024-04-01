@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+"use client"
 
 const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
