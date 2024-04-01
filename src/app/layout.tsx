@@ -47,8 +47,7 @@ const glacialBold = GlacialBold({
 
 export const metadata: Metadata = {
   title: {
-    default: "Teste",
-    template: "%s | Teste"
+    absolute: "Conste Marketing | Agência de Marketing Digital"
   },
   icons: {icon: "../../favicon/favicon.png"}
 };
