@@ -1,13 +1,12 @@
 // Importe o componente Head do next
 import "./globals.css";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import NeueMedium from 'next/font/local'
 import NeueBold from 'next/font/local'
 import GlacialRegular from 'next/font/local'
 import GlacialBold from 'next/font/local'
 import { Montserrat } from 'next/font/google'
 import { GoogleTagManager } from '@next/third-parties/google'
-import Head from "next/head";
 
 const montserrat = Montserrat({
   weight: ['600'],
@@ -48,6 +47,11 @@ const glacialBold = GlacialBold({
 })
 
 export const metadata: Metadata = {
+  title: {
+    default: "Teste",
+    template: "%s | Teste"
+  },
+  description: "Teste",
   icons: {icon: "../../favicon/favicon.png"}
 };
 
@@ -61,9 +65,6 @@ export default function RootLayout({
     
     <html lang="pt-br" className={`${neue.variable} ${glacialBold.variable} ${glacialRegular.variable} ${neueBold.variable} ${montserrat.variable} ${montserratBold.variable}`}>
       <GoogleTagManager gtmId="GTM-TVRWH47F"/>
-      <Head>
-        <meta name="description" content="Marketing digital de alta qualidade para impulsionar o seu negócio" />
-      </Head>
       <body>
         {children}
       </body>
