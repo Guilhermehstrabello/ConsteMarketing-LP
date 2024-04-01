@@ -10,11 +10,16 @@ import Clientes from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario from "@/components/Formulario";
+import { Metadata } from "next";
+
+export const metadata : Metadata = {
+  description:
+  'Testando alteração de Descrição'
+}
 
 export default function Home() {
   return (
-
-    <div>
+    <>
       <ProgressBar />
       <Navbar />
       <HeroSection />
@@ -36,6 +41,6 @@ export default function Home() {
         <Formulario />
       </div>
       <Rodape />
-    </div>
+    </>
   );
 }

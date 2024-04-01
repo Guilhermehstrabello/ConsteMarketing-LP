@@ -51,7 +51,6 @@ export const metadata: Metadata = {
     default: "Teste",
     template: "%s | Teste"
   },
-  description: "Teste",
   icons: {icon: "../../favicon/favicon.png"}
 };
 
