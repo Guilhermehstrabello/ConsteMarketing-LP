@@ -9,16 +9,20 @@ import Clientes from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario from "@/components/Formulario";
-import { Metadata } from "next";
-
-export const metadata : Metadata = {
-  description:
-  'Testando alteração de Descrição'
-}
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Coding Beauty</title>
+        <meta
+          name="description"
+          content="A brand all about coding passion and success"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <ProgressBar />
       <Navbar />
       <HeroSection />
