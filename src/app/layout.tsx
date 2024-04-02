@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   title: {
     absolute: "Conste Marketing | Agência de Marketing Digital"
   },
-  description: "Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice.",
-  icons: {icon: "../../favicon/favicon.png"}
+  description: "Serviços de Marketing de Alta Qualidade. Nossa expertise traz resultados excepcionais em todas as frentes do marketing digital.",
+  icons: { icon: "/favicon.png" },
 };
 
 export default function RootLayout({
@@ -60,9 +60,9 @@ export default function RootLayout({
 }>) {
 
   return (
-    
+
     <html lang="pt-br" className={`${neue.variable} ${glacialBold.variable} ${glacialRegular.variable} ${neueBold.variable} ${montserrat.variable} ${montserratBold.variable}`}>
-      <GoogleTagManager gtmId="GTM-TVRWH47F"/>
+      <GoogleTagManager gtmId="GTM-TVRWH47F" />
       <body>
         {children}
       </body>
