@@ -45,13 +45,6 @@ const glacialBold = GlacialBold({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Conste Marketing | Agência de Marketing Digital"
-  },
-  description: "Serviços de Marketing de Alta Qualidade. Nossa expertise traz resultados excepcionais em todas as frentes do marketing digital.",
-  icons: { icon: "/favicon.png" },
-};
 
 export default function RootLayout({
   children,

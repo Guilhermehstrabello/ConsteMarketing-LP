@@ -9,9 +9,21 @@ import Clientes from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario from "@/components/Formulario";
-import Head from "next/head";
 
-export default function Home() {
+export const metadata = {
+    title: 'Conste Marketing | Agência de Marketing Digital',
+    description: 'A agência de marketing que vai fazer você manter constante suas vendas e resultados através da Internet',
+    url: 'https://constemarketing.com.br',
+    siteName: 'Conste Marketing',
+    icons: {
+      icon: '/favicon.png',
+      apple: '/favicon.png',
+    },
+    locale: 'pt-BR',
+    type: 'website',
+}
+
+export default function Page() {
   return (
     <>
       <ProgressBar />
