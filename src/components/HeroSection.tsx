@@ -14,54 +14,54 @@ const scrollToSection = (id: string) => {
 export function HeroSection() {
 
     const div1Ref = useRef<HTMLDivElement>(null);
-  const div2Ref = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const orangeBlurRef = useRef<HTMLDivElement>(null);
-  const purpleBlurRef = useRef<HTMLDivElement>(null);
+    const div2Ref = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLDivElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
+    const orangeBlurRef = useRef<HTMLDivElement>(null);
+    const purpleBlurRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    // Função para animar o blur com fade-in
-    const animateBlur = (element: HTMLElement) => {
-      gsap.set(element, { opacity: 0 });  // Define a opacidade inicial como 0
-      gsap.to(element, {
-        opacity: 1,
-        x: gsap.utils.random(-50, 50),
-        y: gsap.utils.random(-100, 100),
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      });
-    };
+    useEffect(() => {
+        // Função para animar o blur com fade-in
+        const animateBlur = (element: HTMLElement) => {
+            gsap.set(element, { opacity: 0 });  // Define a opacidade inicial como 0
+            gsap.to(element, {
+                opacity: 1,
+                x: gsap.utils.random(-50, 50),
+                y: gsap.utils.random(-100, 100),
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+            });
+        };
 
-    // Função para animar o fade-in
-    const fadeIn = (elements: HTMLElement[]) => {
-      gsap.set(elements, { opacity: 0 });
-      gsap.to(elements, {
-        opacity: 1,
-        duration: 3.5,
-        ease: 'back.inOut',
-      });
-    };
+        // Função para animar o fade-in
+        const fadeIn = (elements: HTMLElement[]) => {
+            gsap.set(elements, { opacity: 0 });
+            gsap.to(elements, {
+                opacity: 1,
+                duration: 3.5,
+                ease: 'back.inOut',
+            });
+        };
 
-    const div1Element = div1Ref.current;
-    const div2Element = div2Ref.current;
-    const buttonElement = buttonRef.current;
-    const imageElement = imageRef.current;
-    const orangeBlurElement = orangeBlurRef.current;
-    const purpleBlurElement = purpleBlurRef.current;
+        const div1Element = div1Ref.current;
+        const div2Element = div2Ref.current;
+        const buttonElement = buttonRef.current;
+        const imageElement = imageRef.current;
+        const orangeBlurElement = orangeBlurRef.current;
+        const purpleBlurElement = purpleBlurRef.current;
 
-    if (!div1Element || !div2Element || !buttonElement || !imageElement || !orangeBlurElement || !purpleBlurElement) return;
+        if (!div1Element || !div2Element || !buttonElement || !imageElement || !orangeBlurElement || !purpleBlurElement) return;
 
-    // Animações de blur
-    animateBlur(orangeBlurElement);
-    animateBlur(purpleBlurElement);
+        // Animações de blur
+        animateBlur(orangeBlurElement);
+        animateBlur(purpleBlurElement);
 
-    // Animações de fade-in
-    fadeIn([div1Element, div2Element, buttonElement, imageElement]);
+        // Animações de fade-in
+        fadeIn([div1Element, div2Element, buttonElement, imageElement]);
 
-  }, []);
+    }, []);
 
     return (
         <>

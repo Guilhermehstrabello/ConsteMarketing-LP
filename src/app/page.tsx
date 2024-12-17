@@ -9,44 +9,28 @@ import Clientes from "@/components/Clientes";
 import ProgressBar from "@/components/ProgressBar";
 import Rodape from "@/components/Rodape";
 import Formulario from "@/components/Formulario";
+import Loading from "@/components/animation";
 
 export const metadata = {
-    title: 'Conste Marketing | Agência de Marketing Digital',
-    description: 'A agência de marketing que vai fazer você manter constante suas vendas e resultados através da Internet',
-    url: 'https://constemarketing.com.br',
-    siteName: 'Conste Marketing',
-    icons: {
-      icon: '/favicon.png',
-      apple: '/favicon.png',
-    },
-    locale: 'pt-BR',
-    type: 'website',
+  title: 'Conste Marketing | Agência de Marketing Digital',
+  description: 'A agência de marketing que vai fazer você manter constante suas vendas e resultados através da Internet',
+  url: 'https://constemarketing.com.br',
+  siteName: 'Conste Marketing',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
+  locale: 'pt-BR',
+  type: 'website',
 }
 
 export default function Page() {
   return (
     <>
-      <ProgressBar />
-      <Navbar />
-      <HeroSection />
-      <div id="divisoes">
-        <Divisoes />
+      <div className="flex flex-col h-screen justify-center items-center space-y-10">
+        <h1 className="lg:text-6xl text-3xl w-1/2 text-laranja text-center">Estamos Desenvolvendo Uma Nova Versão Incrível para Nosso Site.<span className="text-roxo"> Em breve.</span></h1>
+        <Loading />
       </div>
-      <Porque />
-      <Blur />
-      <div id="porque">
-        <PorqueNos />
-      </div>
-      <div id="depoimentos">
-        <Depoimentos />
-      </div>
-      <div id="clientes">
-        <Clientes />
-      </div>
-      <div id="form">
-        <Formulario />
-      </div>
-      <Rodape />
     </>
   );
 }
