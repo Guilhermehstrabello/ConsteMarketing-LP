@@ -1,6 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import Navbar from "@/components/navbar";
 import ClientLogos from "@/components/clientslogo";
 
